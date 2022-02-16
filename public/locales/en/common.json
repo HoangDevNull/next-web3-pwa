@@ -1,0 +1,23 @@
+{ 
+    "common": {
+      "cancel": "Cancel",
+      "close": "Close",
+      "next": "Next",
+      "previous": "Previous",
+      "add": "Add",
+      "update": "Update",
+      "buy": "Buy",
+      "sell": "Sell",
+      "categorie": "Categories",
+      "select": "Select",
+      "image": "Image",
+      "audio": "Sound",
+      "text": "Text",
+      "all": "All",
+      "comics": "BD",
+      "books": "Books",
+      "video": "Video"
+    }
+
+}
+  

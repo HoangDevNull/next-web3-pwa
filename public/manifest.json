@@ -1,0 +1,42 @@
+  
+{
+    "name": "Linework",
+    "short_name": "Linework",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "icons": [
+      {
+        "src": "/icons/favicon-32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src": "/icons/favicon-64.png",
+        "type": "image/png",
+        "sizes": "64x64"
+      },
+      {
+        "src": "/icons/favicon-96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/icons/favicon-144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "/icons/favicon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/icons/favicon-196.png",
+        "type": "image/png",
+        "sizes": "196x196"
+      }
+    ]
+  }

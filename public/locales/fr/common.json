@@ -1,0 +1,22 @@
+{
+    "common": {
+      "cancel": "Annuler",
+      "close": "Fermer",
+      "next": "Suivant",
+      "previous": "Précédent",
+      "add": "Ajouter",
+      "update": "Enregistrer",
+      "buy": "Acheter",
+      "sell": "Vendre",
+      "categorie": "Catégorie",
+      "select": "Sélectionner",
+      "image": "Image",
+      "audio": "Son",
+      "text": "Texte",
+      "all": "Tous",
+      "comics": "BD",
+      "books": "Livres",
+      "video": "Vidéo"
+    }
+}
+  
