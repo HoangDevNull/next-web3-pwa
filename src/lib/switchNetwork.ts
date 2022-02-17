@@ -1,6 +1,7 @@
 import { BSC_RPC, ETH_RPC, POLYGON_RPC } from './constants';
-import { injected } from './connectors';
+import { injected, walletconnect, walletlink } from './connectors';
 import toast from 'react-hot-toast';
+import { AbstractConnector } from '@web3-react/abstract-connector';
 
 const BSC_TESTNET = {
   chainId: '0x61',
@@ -79,8 +80,13 @@ const NETWORKS = {
 
 type IAllowedNetwork = '0x38' | '0x61' | '0x1' | '0x4' | '0x89' | '0x13881';
 
-export async function requestSwitchNetwork(chainId: number) {
+export async function requestSwitchNetwork(chainId: number, connector?: AbstractConnector) {
   const chainIdHex = `0x${chainId.toString(16)}` as IAllowedNetwork;
+  // if not using meta mask => Reject the connection
+  if (connector == walletconnect || connector == walletlink) {
+    toast.error(`Wrong Network - Please connect to ${NETWORKS[chainIdHex].chainName} to claim!`);
+    return false;
+  }
 
   const provider = (window as any)?.ethereum;
 

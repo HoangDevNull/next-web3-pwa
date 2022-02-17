@@ -1,19 +1,16 @@
+import React from 'react';
 import { supportChains } from '@/lib/config';
 import { requestSwitchNetwork } from '@/lib/switchNetwork';
 import { Avatar, Box, Button, Popover, Typography } from '@mui/material';
 import { useWallet } from 'hooks/useWallet';
 import { StyledButtonGroup } from 'layout/MainLayout/styled';
 import PopupState, { bindPopover, bindTrigger } from 'material-ui-popup-state';
-import React from 'react';
 
 const ButtonWrongNetwork = () => {
-  const { library, connect } = useWallet();
+  const { connector } = useWallet();
 
   const changeNetwork = async (chainId: number) => {
-    if (library?.connection.url === 'metamask') {
-      await requestSwitchNetwork(chainId);
-      await connect('injected');
-    }
+    await requestSwitchNetwork(chainId, connector);
   };
 
   return (

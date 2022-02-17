@@ -5,7 +5,6 @@ import { getWalletModal, toggleWalletModal } from '@/store/ducks/wallet/slice';
 import { ConnectButton } from './styled';
 import { Dialog, DialogTitle } from '@/ui/Dialog';
 import { useWallet } from '@/hooks';
-import toast from 'react-hot-toast';
 
 const WalletModal: FC = () => {
   const dispatch = useAppDispatch();
@@ -22,22 +21,6 @@ const WalletModal: FC = () => {
       handleClose();
     } catch (error: any) {
       console.log({ error });
-      if (error.name === 'NoEthereumProviderError') {
-        toast.error(
-          'No Ethereum browser extension detected, install MetaMask on desktop or visit from a dApp browser on mobile.'
-        );
-      } else if (error.name === 'UserRejectedRequestError') {
-        toast.error('Please authorize this website to access your Ethereum account.');
-      } else if ((error as any).code === -32002) {
-        toast.error('Already processing ethereum request Accounts. Please accept the request.');
-      } else if ((error as any).code === 4001) {
-        toast.error('User denied account authorization.');
-      } else if (error.message) {
-        toast.error(error.message);
-      } else {
-        console.error(error.toString());
-        toast.error('An unknown error occurred. Check the console for more details.');
-      }
     }
   };
 

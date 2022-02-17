@@ -30,7 +30,7 @@ const Wallet: FC<Props> = ({ triedToEagerConnect }) => {
     return null;
   }
 
-  if (String(error?.message) === 'UnsupportedChainIdError') {
+  if (String(error?.name) === 'UnsupportedChainIdError') {
     return <ButtonWrongNetwork />;
   }
 
